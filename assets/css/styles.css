@@ -75,7 +75,9 @@
     scroll-behavior: smooth;
   }
 }
-
+.t-size{
+  font-size: 20px;
+}
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
@@ -3018,6 +3020,7 @@ textarea.form-control-lg {
     transition: none;
   }
 }
+
 .btn:hover {
   color: #212529;
 }
@@ -7809,7 +7812,7 @@ textarea.form-control-lg {
 
 .bg-primary {
   --bs-bg-opacity: 1;
-  background-color: #f3870bd0;
+  background-color :rgba(243, 135, 11, 0.6);
 }
 
 .bg-secondary {
@@ -11300,6 +11303,7 @@ body {
 
 .page-section {
   padding: 8rem 0;
+  
 }
 
 .text-white-75 {
