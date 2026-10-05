@@ -1,59 +1,37 @@
-/*!
-* Start Bootstrap - Creative v7.0.6 (https://startbootstrap.com/theme/creative)
-* Copyright 2013-2022 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-creative/blob/master/LICENSE)
-*/
-//
-// Scripts
-// 
+'use strict';
 
-window.addEventListener('DOMContentLoaded', event => {
+document.documentElement.classList.add('js');
 
-    // Navbar shrink function
-    var navbarShrink = function () {
-        const navbarCollapsible = document.body.querySelector('#mainNav');
-        if (!navbarCollapsible) {
-            return;
-        }
-        if (window.scrollY === 0) {
-            navbarCollapsible.classList.remove('navbar-shrink')
-        } else {
-            navbarCollapsible.classList.add('navbar-shrink')
-        }
+const menuToggle = document.querySelector('.menu-toggle');
+const navigation = document.querySelector('#site-nav');
+const mobileLayout = window.matchMedia('(max-width: 800px)');
 
-    };
+function closeMenu(returnFocus = false) {
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', '開啟導覽選單');
+    navigation.classList.remove('is-open');
+    if (returnFocus) menuToggle.focus();
+}
 
-    // Shrink the navbar 
-    navbarShrink();
-
-    // Shrink the navbar when page is scrolled
-    document.addEventListener('scroll', navbarShrink);
-
-    // Activate Bootstrap scrollspy on the main nav element
-    const mainNav = document.body.querySelector('#mainNav');
-    if (mainNav) {
-        new bootstrap.ScrollSpy(document.body, {
-            target: '#mainNav',
-            offset: 74,
-        });
-    };
-
-    // Collapse responsive navbar when toggler is visible
-    const navbarToggler = document.body.querySelector('.navbar-toggler');
-    const responsiveNavItems = [].slice.call(
-        document.querySelectorAll('#navbarResponsive .nav-link')
-    );
-    responsiveNavItems.map(function (responsiveNavItem) {
-        responsiveNavItem.addEventListener('click', () => {
-            if (window.getComputedStyle(navbarToggler).display !== 'none') {
-                navbarToggler.click();
-            }
-        });
-    });
-
-    // Activate SimpleLightbox plugin for portfolio items
-    new SimpleLightbox({
-        elements: '#portfolio a.portfolio-box'
-    });
-
+menuToggle.addEventListener('click', () => {
+    const opening = menuToggle.getAttribute('aria-expanded') !== 'true';
+    menuToggle.setAttribute('aria-expanded', String(opening));
+    menuToggle.setAttribute('aria-label', opening ? '關閉導覽選單' : '開啟導覽選單');
+    navigation.classList.toggle('is-open', opening);
 });
+
+navigation.addEventListener('click', event => {
+    if (event.target.closest('a') && mobileLayout.matches) closeMenu();
+});
+
+document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') closeMenu(true);
+});
+
+document.addEventListener('click', event => {
+    if (!event.target.closest('.site-header')) closeMenu();
+});
+
+mobileLayout.addEventListener('change', () => closeMenu());
+
+document.querySelector('#copyright-year').textContent = new Date().getFullYear();
