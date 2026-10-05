@@ -27,7 +27,16 @@
 
 ## 發布與提交結果
 
-待部署後填入實際檢查及回覆；尚不宣稱泛詞排名或 AI 引用已成功。
+- 內容 commit：`930ee69`，GitHub Pages 建置與部署成功：[部署記錄](https://github.com/howardtuan/dailyTable/actions/runs/37273190208)。
+- 八頁在 1440px、768px、390px 與 320px 的 32 組瀏覽器檢查通過。圖片、ARIA 標籤、主導覽、手機選單、FAQ、舊錨點相容及無 JavaScript 使用正常。
+- 正式站八個頁面、robots、sitemap、llms、IndexNow 驗證檔都回應 HTTP 200，canonical 與實際網址一致，通路數量為六個。
+- 兩篇文章合計九題 FAQ，JSON-LD 與可見問答逐項完全一致，原始來源及引用網址可見。
+- 向 `https://api.indexnow.org/indexnow` 一次提交 sitemap 的八個頁面網址，回覆 **HTTP 202**，空白回應本文。代表收到通知、驗證待處理，不代表已索引。
+- 部署後在 Chrome 實際檢查台灣 Google 非個人化查詢（`hl=zh-TW`、`gl=tw`、`pws=0`）：「無糖可可粉」第一頁未見官網自然搜尋結果；`site:mydailytable.com` 可找到首頁，但標題與摘要仍是舊版。Google 的精確索引狀態仍需 URL Inspection 驗證。
+- AI 網頁工具可透過舊首頁連結讀取先前產品頁內容；本輪直接開啟新文章回報工具不可存取，根站則仍回傳先前快取版本。正式站瀏覽器及 HTTP 測試成功，不能以此宣稱該 AI 平台已取得最新內容或引用本站。
+- 已開啟 Google Search Console 驗證選項；目前尚未發布 Google 驗證檔、取得網站擁有者權限或申請索引。需先確認採用的 Google 帳號，不將等待確認視為已授權。
+
+**目前尚未達成「無品牌、無網域限制的泛詞搜尋返回新版官網」驗證標準。** 後續需完成 Search Console 權限確認與索引申請，等待搜尋平台擷取後再記錄真實結果，不以通知收到或技術檢查代替排名成功。
 
 ## 官方依據
 
