@@ -35,4 +35,25 @@
             <image:loc>https://mydailytable.com/assets/img/web/cocoa-table.jpg</image:loc>
         </image:image>
     </url>
+    <url>
+        <loc>https://mydailytable.com/guides/</loc>
+        <lastmod>2026-10-05</lastmod>
+        <image:image>
+            <image:loc>https://mydailytable.com/assets/img/web/cocoa-tin.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://mydailytable.com/guides/unsweetened-cocoa-powder/</loc>
+        <lastmod>2026-10-05</lastmod>
+        <image:image>
+            <image:loc>https://mydailytable.com/assets/img/web/cocoa-tin.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://mydailytable.com/guides/how-to-make-cocoa/</loc>
+        <lastmod>2026-10-05</lastmod>
+        <image:image>
+            <image:loc>https://mydailytable.com/assets/img/web/cocoa-pour.jpg</image:loc>
+        </image:image>
+    </url>
 </urlset>

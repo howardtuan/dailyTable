@@ -1,6 +1,6 @@
 # 每日餐桌 daily TABLE
 
-簡約的品牌形象官網，以五個獨立頁面介紹純可可粉、品牌理念、日常搭配與購買通路。
+簡約的品牌形象官網，介紹無糖純可可粉、品牌理念、日常搭配、購買通路與可可指南。
 
 - 正式網站：[mydailytable.com](https://mydailytable.com/)
 - 純 HTML / CSS / JavaScript，無套件依賴、後端或建置流程。
@@ -16,6 +16,9 @@
 | `/about/` | `about/index.html` | 品牌理念與餐桌故事 |
 | `/rituals/` | `rituals/index.html` | 晨間、午後與週末的可可搭配 |
 | `/shop/` | `shop/index.html` | 六個購買／查詢通路、Logo 與供貨資訊 |
+| `/guides/` | `guides/index.html` | 選購與沖泡指南入口 |
+| `/guides/unsweetened-cocoa-powder/` | `guides/unsweetened-cocoa-powder/index.html` | 成分比較、選購、用途與保存 |
+| `/guides/how-to-make-cocoa/` | `guides/how-to-make-cocoa/index.html` | 牛奶、豆漿、咖啡、冰飲與沖泡問題 |
 
 主選單直接開啟各頁網址，首頁舊版的產品、品牌、日常、通路與 FAQ 錨點由 JavaScript 轉向相應新頁面。電話及聯絡表單已從公開網頁、結構化資料與資訊摘要移除。
 
@@ -31,7 +34,7 @@ python3 -m http.server 4173
 
 ## 內容維護
 
-- 各頁 HTML：可見內容、共用導覽／頁尾、每頁 SEO 與 JSON-LD。導覽或頁尾更新時同步維護五個頁面。
+- 各頁 HTML：可見內容、共用導覽／頁尾、每頁 SEO 與 JSON-LD。導覽或頁尾更新時同步維護八個頁面。
 - `assets/css/styles.css`：共用響應式版型、鍵盤焦點與減少動態效果設定。
 - `assets/js/scripts.js`：手機選單、頁尾年份與舊網址相容。主要內容、購物連結與 FAQ 不依賴 JavaScript。
 - `assets/img/web/`：原有品牌攝影的網頁尺寸版本，原始照片保留於 `assets/img/`。
@@ -42,9 +45,11 @@ python3 -m http.server 4173
 
 ## SEO 與 AI 搜尋
 
-每頁都有獨立的標題、摘要、HTTPS canonical、Open Graph／分享資訊及適合該頁的 JSON-LD。全站提供 Organization、Brand 與 WebSite；產品頁另有 Product／FAQPage，通路及日常頁提供 ItemList，內頁提供 BreadcrumbList。所有重要文字皆直接存在靜態 HTML。
+每頁都有獨立的標題、摘要、HTTPS canonical、Open Graph／分享資訊及適合該頁的 JSON-LD。全站提供 Organization、Brand 與 WebSite；產品頁另有 Product／FAQPage，通路、日常與指南入口提供 ItemList，文章提供 Article 與對應 FAQ，內頁提供 BreadcrumbList。所有重要文字皆直接存在靜態 HTML。
 
-`robots.txt` 開放一般搜尋與 OAI-SearchBot、Claude-SearchBot、PerplexityBot，排除儲存庫維護文件。`sitemap.xml` 列出五個 canonical 網址及產品圖片。`llms.txt` 為品牌／產品的補充導覽；Google Search 不使用它作排名或 AI 搜尋訊號，也不代表任何平台已收錄。
+`robots.txt` 開放一般搜尋與 OAI-SearchBot、Claude-SearchBot、PerplexityBot，排除儲存庫維護文件及腳本。`sitemap.xml` 列出八個 canonical 網址及產品圖片。`llms.txt` 為品牌／產品的補充導覽；Google Search 不使用它作排名或 AI 搜尋訊號，也不代表任何平台已收錄。
+
+產品頁明確描述「無糖可可粉 250g」，選購與沖泡指南分別回答購買前與使用時的問題。文章採自然文字、可見比較表、步驟及原始來源，並與產品和購買通路互相連結；不為同義詞建立重複頁、不捏造營養數值、評分或測試結果。
 
 更新內容時，同步維護：
 
@@ -57,6 +62,18 @@ python3 -m http.server 4173
 
 [官方文件與設計依據](docs/search-sources.md)
 
+## 搜尋更新通知
+
+`indexnow-key.txt` 是部署於根目錄的 IndexNow 網站驗證檔。每次內容部署成功後，可用 Python 3 與 curl 執行：
+
+```sh
+python3 scripts/submit-indexnow.py
+```
+
+腳本先核對正式站的驗證檔，再從 sitemap 讀取八個 HTTPS 網址並一次通知 IndexNow。HTTP 200 表示收到網址，202 表示收到但驗證待處理；兩者都不等於已索引、排名或 AI 引用。不要連續提交相同內容，Google 的索引申請另由 Search Console 處理。
+
+[本次搜尋查核與提交記錄](docs/search-validation.md)
+
 ## 驗證
 
-檢查五頁在桌機、平板、手機及 320px 小螢幕的版面、圖片、內部連結、選單、FAQ、舊網址相容與無 JavaScript 使用；另檢查 sitemap、爬蟲規則、結構化資料與可見內容一致性。
+檢查八頁在桌機、平板、手機及 320px 小螢幕的版面、圖片、內部連結、選單、FAQ、舊網址相容與無 JavaScript 使用；另檢查 sitemap、爬蟲規則、結構化資料與可見內容一致性。
