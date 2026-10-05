@@ -1,0 +1,12 @@
+# Public brand and product content is available to search crawlers.
+User-agent: *
+User-agent: OAI-SearchBot
+User-agent: Claude-SearchBot
+User-agent: PerplexityBot
+# Repository maintenance notes are not part of the public brand website.
+Disallow: /docs/
+Disallow: /README.md
+Disallow: /assets/logos/README.md
+Allow: /
+
+Sitemap: https://mydailytable.com/sitemap.xml
