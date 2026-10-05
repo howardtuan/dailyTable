@@ -11,7 +11,7 @@ Applied [Impeccable](https://github.com/pbakaus/impeccable), version 4.5.0, inst
 - Body: 18px desktop/tablet, 17px mobile; approximately 1.85 line height.
 - Navigation, buttons and tables: 16px. Metadata: 14px minimum.
 - Section headings: 30–40px; article section headings: 26–30px.
-- Main content: at most 1200px wide; article body: at most 760px.
+- Inner-page content: at most 1200px wide; article body: at most 760px. The homepage uses full-width photography and story regions; see [homepage-design.md](homepage-design.md).
 - Mobile gutters: 20px. Major sections: 88px desktop, 64px tablet, 48px mobile.
 - Native/system font fallback remains, with no blocking remote font request.
 
