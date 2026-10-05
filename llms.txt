@@ -2,22 +2,21 @@
 
 > 每日餐桌的品牌網站，介紹頂級沖泡純可可粉、成分規格、日常搭配、保存方式及購買通路。網站提供產品資訊與通路導覽，訂購、付款及配送由購物平台處理。
 
-網站語言：繁體中文。官方網址：https://mydailytable.com/ 。資訊整理日期：2026-10-05（Asia/Taipei）。
+網站語言：繁體中文。網站包含首頁、產品介紹、品牌故事、可可日常與購買通路五個獨立頁面。官方網址：https://mydailytable.com/ 。資訊整理日期：2026-10-05（Asia/Taipei）。
 
 ## 產品資訊
 
-- [產品介紹](https://mydailytable.com/#product)：產品名稱為「每日餐桌頂級沖泡純可可粉」；成分為 100% 無糖可可粉，250g 罐裝，不添加砂糖、奶精及其他調味劑。可可風味醇厚微苦。
-- [日常搭配](https://mydailytable.com/#ritual)：可搭配牛奶、豆漿、咖啡，或用於蛋糕、餅乾等日常烘焙。
-- [常見問題](https://mydailytable.com/#faq)：成分、沖泡、烘焙、保存及購買資訊。開封後蓋緊罐蓋，置於陰涼乾燥通風處，避免潮濕與高溫；保存期限以實際包裝標示為準。
+- [產品介紹](https://mydailytable.com/products/cocoa/)：產品名稱為「每日餐桌頂級沖泡純可可粉」；成分為 100% 無糖可可粉，250g 罐裝，不添加砂糖、奶精及其他調味劑。可可風味醇厚微苦。
+- [日常搭配](https://mydailytable.com/rituals/)：可搭配牛奶、豆漿、咖啡，或用於蛋糕、餅乾等日常烘焙。
+- [常見問題](https://mydailytable.com/products/cocoa/#faq)：成分、沖泡、烘焙、保存及購買資訊。開封後蓋緊罐蓋，置於陰涼乾燥通風處，避免潮濕與高溫；保存期限以實際包裝標示為準。
 
-## 品牌與聯絡
+## 品牌
 
-- [品牌介紹](https://mydailytable.com/#about)：每日餐桌 daily TABLE，以純可可風味融入日常餐桌。
-- [聯絡方式](https://mydailytable.com/#contact)：產品詢問與合作可使用頁面提供的聯絡表單，電話為 02-7751-9191。
+- [品牌介紹](https://mydailytable.com/about/)：每日餐桌 daily TABLE，以純可可風味融入日常餐桌。
 
 ## 購買與查詢通路
 
-- [通路總覽](https://mydailytable.com/#shop)：附通路 Logo、購買或查詢按鈕及查核日期。
+- [通路總覽](https://mydailytable.com/shop/)：附通路 Logo、購買或查詢按鈕及查核日期。
 - [momo 購物網](https://www.momoshop.com.tw/product/9507948)：250g × 3 罐組，查核時可選購。
 - [博客來](https://www.books.com.tw/products/N011166921)：商品資訊仍在，查核時暫停販售。
 - [愛料理市集](https://market.icook.tw/products/cocoa)：商品資訊仍在，查核時已售完並下架。

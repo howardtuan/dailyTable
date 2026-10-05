@@ -4,7 +4,7 @@ document.documentElement.classList.add('js');
 
 const menuToggle = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('#site-nav');
-const mobileLayout = window.matchMedia('(max-width: 800px)');
+const mobileLayout = window.matchMedia('(max-width: 900px)');
 
 function closeMenu(returnFocus = false) {
     menuToggle.setAttribute('aria-expanded', 'false');
@@ -35,3 +35,17 @@ document.addEventListener('click', event => {
 mobileLayout.addEventListener('change', () => closeMenu());
 
 document.querySelector('#copyright-year').textContent = new Date().getFullYear();
+
+// Preserve older product and retailer links after the move to separate pages.
+if (location.pathname === '/' || location.pathname === '/index.html') {
+    const previousSections = {
+        '#product': '/products/cocoa/',
+        '#about': '/about/',
+        '#ritual': '/rituals/',
+        '#portfolio': '/rituals/',
+        '#shop': '/shop/',
+        '#services': '/shop/',
+        '#faq': '/products/cocoa/#faq'
+    };
+    if (previousSections[location.hash]) location.replace(previousSections[location.hash]);
+}
